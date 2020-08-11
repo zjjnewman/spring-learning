@@ -1,0 +1,42 @@
+server:
+  port: 8080
+
+spring:
+  mvc:
+    view:
+      suffix: .html
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  webflux:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  datasource:
+    username: jin
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://remotehost1:3306/ssm_crud
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 101.132.178.15
+    port: 6379
+  cache:
+    redis:
+      use-key-prefix: false
+#  禁用模板引擎的缓存
+thymeleaf:
+  cache: false
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.atguigu.springboot.mapper: debug
+# 自动配置报告打开
+#debug: true

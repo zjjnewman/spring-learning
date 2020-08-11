@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+
+         version="4.0">
+<!-- **********************   这是一个springMVC基础配置在web.xml的表现示例**************************-->
+
+
+<!--    1.启动spring的容器-->
+<!--    下面配置，spring监听器一启动，指定加载某spring配置文件的位置-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+<!--        类路径下（/src/main/resource）spring的配置文件-->
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+<!--    下面配置项目一启动，就来启动spring的监听器，-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+<!--    2.配置springMVC的前端控制器，拦截所有请求，个人理解是servlet-->
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 可以在init-param指定springMVC配置文件的位置，也可以不指定，但是有个规则：在web.xml同级的目录下有个spring配置文件，文件名是《当前servlet-servlet.xml》
+        如本servlet的配置文件是 dispatcherServlet-servlet.xml
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>location</param-value>
+        </init-param>
+        -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+<!--    3.字符编码过滤器-->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceRequestEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceResponseEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+<!--    4.使用rest风格的URI，将页面普通的post请求转为指定的delete或者put请求
+设置一个过滤器，把页面发过来的请求，转为指定的请求（如 post get 转为post delete put get 分别对应数据库的 create delete update read）
+-->
+    <filter>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HiddenHttpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+</web-app>
