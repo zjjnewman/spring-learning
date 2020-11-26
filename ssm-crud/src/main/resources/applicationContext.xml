@@ -18,7 +18,7 @@
 
 
 <!--    1.配置业务逻辑组件扫描位置-->
-    <context:component-scan base-package="com.atguigu.crud.*" use-default-filters="false">
+    <context:component-scan base-package="com.atguigu.crud" use-default-filters="false">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 

@@ -1,22 +1,16 @@
 package com.atguigu.crud.test;
 
-import com.atguigu.crud.bean.Department;
-import com.atguigu.crud.bean.Employee;
-import com.atguigu.crud.dao.DepartmentMapper;
 import com.atguigu.crud.dao.EmployeeMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
 import org.mybatis.generator.internal.DefaultShellCallback;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,8 +55,10 @@ public class mybatisTest {
 //        departmentMapper.insertSelective(department);
 
         EmployeeMapper employeeMapper = applicationContext.getBean(EmployeeMapper.class);
-        Employee employee = new Employee(null, "张三", "M", "zhangsan@qq.com", 1);
-        employeeMapper.insertSelective(employee);
-
+//        Employee employee = new Employee(null, "张三", "M", "zhangsan@qq.com", 1);
+//        employeeMapper.insertSelective(employee);
+        System.out.println(employeeMapper);
+//        Employee employee1 = employeeMapper.selectByPrimaryKey(1);
+//        System.out.println(employee1);
     }
 }

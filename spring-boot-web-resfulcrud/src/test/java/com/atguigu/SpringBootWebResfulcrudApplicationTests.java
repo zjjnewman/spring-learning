@@ -1,6 +1,7 @@
 package com.atguigu;
 
 import com.atguigu.springboot.bean.Employee;
+import com.atguigu.springboot.bean.EmployeeExample;
 import com.atguigu.springboot.mapper.EmployeeMapper;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
@@ -64,6 +65,11 @@ class SpringBootWebResfulcrudApplicationTests {
         System.out.println(stringRedisTemplate.opsForValue().get("msg"));
 
         //
+    }
+
+    @Test
+    public void JSRtest(){
+        new EmployeeExample();
     }
 
 

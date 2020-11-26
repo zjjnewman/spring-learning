@@ -26,6 +26,10 @@ spring:
   cache:
     redis:
       use-key-prefix: false
+  mail:
+    properties.mail.smtp-ssl.enble:
+
+
 #  禁用模板引擎的缓存
 thymeleaf:
   cache: false

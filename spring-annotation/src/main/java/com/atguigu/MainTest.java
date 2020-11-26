@@ -8,20 +8,26 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainTest {
 
-    public static void main(String[] args) {
-        // 配置文件方式
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Person person = (Person) applicationContext.getBean("person");
-        System.out.println(person);
-
-        // 配置类方式
-        AnnotationConfigApplicationContext applicationContext1 = new AnnotationConfigApplicationContext(MainConfig.class);
-        Person bean = applicationContext1.getBean(Person.class);
-        System.out.println(bean);
-
-        String[] beanNamesForType = applicationContext1.getBeanNamesForType(Person.class);
-        for (String s : beanNamesForType) {
-            System.out.println(s);
-        }
+    static public final int a;
+    static {
+        a = 1;
     }
+
+    public void t1(){
+        final int b = 0;
+        System.out.println(b);
+    }
+
+    public static void main(String[] args) {
+        MyClass myClass1 = new MyClass();
+        MyClass myClass2 = new MyClass();
+        System.out.println(myClass1.i);
+        System.out.println(myClass1.j);
+        System.out.println(myClass2.i);
+        System.out.println(myClass2.j);
+    }
+}
+class MyClass {
+    public final double i = Math.random();
+    public static double j = Math.random();
 }

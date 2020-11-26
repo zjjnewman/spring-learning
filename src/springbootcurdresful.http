@@ -1,0 +1,30 @@
+GET http://localhost:8080/emp/10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-08-10T092004.200.json
+
+
+###
+#PUT http://localhost:8080/emp?empId=104&empName=王六&gender=M&email=zhangsan@qq.com&dId=1
+PUT http://localhost:8080/emp?empId=104&empName=王五&gender=M&email=zhangsan@qq.com&dId=1
+Accept: */*
+Cache-Control: no-cache
+
+
+###
+POST http://localhost:8080/emp?empName=王一&gender=M&email=zhangsan@qq.com&dId=1
+
+
+###
+DELETE http://localhost:8080/emp/98
+Accept: */*
+Cache-Control: no-cache
+
+
+###
+HEAD http://localhost:8080/emp/10
+Accept: */*
+Cache-Control: no-cache
+
+###

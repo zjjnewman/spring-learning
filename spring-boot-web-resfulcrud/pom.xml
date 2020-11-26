@@ -76,6 +76,7 @@
         </dependency>
 
 
+<!--        rocketmq-->
         <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter -->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
@@ -88,7 +89,18 @@
         <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
 
+<!--        邮箱服务-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
 
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
 
     </dependencies>

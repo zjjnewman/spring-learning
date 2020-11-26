@@ -6,15 +6,13 @@ import com.atguigu.crud.dao.EmployeeMapper;
 import com.atguigu.crud.service.EmployeeService;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
-import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 
 import java.util.UUID;
-
-@SpringJUnitWebConfig(locations = "classpath:spring-controller.xml")
-@ContextConfiguration(locations = {"classpath:spring-applicationContext.xml"})
+@SpringJUnitWebConfig(locations = {"classpath:applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class MapperTest {
 
     @Autowired

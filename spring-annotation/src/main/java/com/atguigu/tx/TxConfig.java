@@ -32,7 +32,8 @@ public class TxConfig {
     @Bean
     public JdbcTemplate jdbcTemplate() throws SQLException {
         // spring 对config有特殊处理，给容器加组件的，多次调用时从容器中找组件，而不是重新创建
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource());
+        DruidDataSource druidDataSource = dataSource();
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(druidDataSource);
         return jdbcTemplate;
     }
 

@@ -16,6 +16,6 @@ public class EmployeeService {
     EmployeeMapper employeeMapper;
 
     public Employee getOne() {
-        return (Employee) employeeMapper.selectByPrimaryKey(12);
+        return employeeMapper.selectByPrimaryKey(1);
     }
 }

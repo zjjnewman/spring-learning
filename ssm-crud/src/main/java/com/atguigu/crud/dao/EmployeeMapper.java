@@ -1,12 +1,11 @@
 package com.atguigu.crud.dao;
 
-import com.atguigu.crud.bean.Employee;
-import com.atguigu.crud.bean.EmployeeExample;
 import java.util.List;
 
+import com.atguigu.crud.bean.Employee;
+import com.atguigu.crud.bean.EmployeeExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 @Mapper
 public interface EmployeeMapper {

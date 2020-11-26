@@ -1,9 +1,12 @@
 package com.atguigu.springboot.bean;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentExample {
+
     protected String orderByClause;
 
     protected boolean distinct;

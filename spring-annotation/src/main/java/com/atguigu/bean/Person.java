@@ -1,5 +1,7 @@
 package com.atguigu.bean;
 
+import org.springframework.stereotype.Component;
+
 public class Person {
 
     private String name;

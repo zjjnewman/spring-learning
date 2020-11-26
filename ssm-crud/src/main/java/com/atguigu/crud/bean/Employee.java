@@ -1,8 +1,8 @@
 package com.atguigu.crud.bean;
 
-import org.springframework.context.annotation.Bean;
+import java.io.Serializable;
 
-public class Employee {
+public class Employee implements Serializable {
     private Integer empId;
 
     private String empName;
